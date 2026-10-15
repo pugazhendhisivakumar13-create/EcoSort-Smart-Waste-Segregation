@@ -1,0 +1,7 @@
+Test_ID,Input,Expected_Result
+TC01,Power on,Servo initializes
+TC02,Proximity sensor LOW,Buzzer and stepper activate
+TC03,IR sensor LOW and value above 20,Stepper and servo sequence runs
+TC04,IR sensor LOW and value 20 or below,Servo operates without conditional stepper movement
+TC05,No sensor trigger,No sorting sequence runs
+TC06,Repeated triggers,Check for jamming and reliable operation
