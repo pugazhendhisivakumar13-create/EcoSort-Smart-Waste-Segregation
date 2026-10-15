@@ -1,0 +1,36 @@
+# EcoSort Technical Design
+
+## Architecture
+
+Waste Input → IR/Proximity Sensors → Arduino Controller → Stepper Motor and Servo Gate → Sorting Bins
+
+The analog moisture sensor provides readings to the Arduino. The controller processes the readings and activates the sorting mechanism according to the programmed threshold.
+
+## Pin Connections
+
+| Component | Arduino Pin |
+|---|---|
+| IR sensor | D5 |
+| Proximity sensor | D6 |
+| Buzzer | D12 |
+| Servo motor | D7 |
+| Analog moisture sensor | A0 |
+| Stepper motor | D11, D10, D9, D8 |
+
+## Workflow
+1. Initialize sensors and motors.
+2. Read the proximity sensor.
+3. Detect an object using the IR sensor.
+4. Read and average three analog sensor values.
+5. Compare the calculated value with the threshold.
+6. Activate the stepper motor and servo gate according to the condition.
+7. Return the mechanism to its initial position.
+
+## Risks and Limitations
+- Sensor readings require calibration.
+- Waste classification may be inaccurate.
+- Motors may jam if the mechanism is poorly aligned.
+- Use suitable motor power supplies and test safely.
+
+## Testing
+Test each sensor separately, verify motor direction, calibrate thresholds, and record the results before operating the complete system.
